@@ -6,12 +6,32 @@ class Instrument < ApplicationRecord
   validates :renting_price, inclusion: { in: 1.. }, numericality: { only_integer: true }
 
   enum category: [
-    :trumpet,
-    :violin
+    :altosaxphone
+    :bass,
+    :bassclarinet
+    :cello,
+    :clarinet,
+    :drum,
+    :doublebass,
+    :frenchhorn
+    :flute,
+    :guiter,
+    :harp,
+    :keybord,
+    :oboe,
+    :piano
+    :piccolo
+    :trumpet
+    :viola,
+    :violin,
+    :xylophone
   ]
 
   enum condition: [
+    :new
+    :verygood,
     :good,
     :bad
+    :old
   ]
 end
