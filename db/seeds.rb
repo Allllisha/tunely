@@ -1,5 +1,11 @@
 Instrument.destroy_all
 Booking.destroy_all
+User.destroy_all
+
+User.create!([
+  {first_name: Arisa, last_name: Nemoto, email: "ardolce23@gmail.com", password: "a23123123", admin: true},
+  {first_name: Arisa, last_name: Nemoto, email: "farbenmusik23@gmail.com", password: "a23123123", admin: false}
+  ])
 
 10.times do 
   Instrument.create!(
