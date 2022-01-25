@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :instruments
   has_many :bookings
+
+  validates :first_name, :last_time, presence: true
 end
