@@ -4,7 +4,7 @@ User.destroy_all
 
 User.create!([
   {first_name: Arisa, last_name: Nemoto, email: "ardolce23@xxx.com", password: "a23123123", admin: true},
-  {first_name: Arisa, last_name: Nemoto, email: "farbenmusik23@xxx.com", password: "1234567", admin: false}
+  {first_name: Alisha, last_name: Nemoto, email: "farbenmusik23@xxx.com", password: "1234567", admin: false}
   ])
 
 10.times do 
