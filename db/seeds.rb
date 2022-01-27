@@ -24,8 +24,6 @@ alisha = User.new(
     condition: Instrument.conditions.keys.sample,
     availability: false
   )
-  instrument.user = User.all.sample
-  instrument.save!
 end
 
 10.times do 
@@ -34,7 +32,4 @@ end
     end_date: Faker::Date.between( from: Date.today, to: 1.year.from_now),
     status: rand(0..2)
   )
-  booking.user = User.all.sample
-  booking.instrument = Instrument.all.sample
-  booking.save!
 end
