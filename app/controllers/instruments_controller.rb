@@ -1,5 +1,6 @@
 class InstrumentsController < ApplicationController
   def index
+    @instruments = policy_scope(Instrument)
   end
 
   def show
