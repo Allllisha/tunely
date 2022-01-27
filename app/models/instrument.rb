@@ -1,6 +1,6 @@
 class Instrument < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
   validates :category, :location, :renting_price, presence: true
   validates :renting_price, inclusion: { in: 1.. }, numericality: { only_integer: true }
@@ -28,7 +28,7 @@ class Instrument < ApplicationRecord
   ]
 
   enum condition: [
-    :new,
+    :mint,
     :verygood,
     :good,
     :bad,
