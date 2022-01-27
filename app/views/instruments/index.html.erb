@@ -7,5 +7,6 @@
   <p>availability: <%= instrument[:availability] %></p>
   <p>renting_price: <%= instrument[:renting_price] %></p>
   <p>user: <%= instrument.user[:email] %></p>
+  <%= link_to "show", instrument_path(instrument) %>
   <br>
 <% end %>
