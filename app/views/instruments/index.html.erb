@@ -1,0 +1,11 @@
+<h1>instruments#index</h1>
+<% @instruments.each do |instrument| %>
+  <p>category: <%= instrument[:category] %></p>
+  <p>brand: <%= instrument[:brand] %></p>
+  <p>location: <%= instrument[:location] %></p>
+  <p>condtion: <%= instrument[:condtion] %></p>
+  <p>availability: <%= instrument[:availability] %></p>
+  <p>renting_price: <%= instrument[:renting_price] %></p>
+  <p>user: <%= instrument.user[:email] %></p>
+  <br>
+<% end %>
