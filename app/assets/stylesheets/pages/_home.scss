@@ -1,1 +1,72 @@
 // Specific CSS for your home-page
+// .howto-container{
+//   display: ;
+// }
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  min-height:300px;
+  width: 200px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  padding: 20px;
+  text-align: center;
+  border: 1px solid rgb(230,230,230);
+}
+
+.border{
+  border-bottom : solid gray;
+}
+
+.basic{
+border: solid $gray;
+flex-shrink: 0;
+}
+.basic h1{
+  margin-bottom: 0;
+}
+
+.premium{
+  border: solid $purple;
+  flex-shrink: 0;
+  margin: 30px;
+}
+
+.premium h1{
+  margin-bottom: 0；
+}
+
+.unlimited{
+  border: solid $black;
+  flex-shrink: 0;
+}
+
+.unlimited h1{
+  margin-bottom: 0;
+}
+
+.text-center {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.top {
+  text-shadow: 1px 2px 4px #262121;
+}
+
+.text-center{
+  font-family: 'PT Serif', serif;
+}
+
+h6{
+  margin-top: 0;
+  color: darkgray;
+}
