@@ -6,8 +6,8 @@
 <% @instruments.each do |instrument| %>
 
 <div class="card" style="width: 18rem;">
- <%= image_tag asset_url("piano.jpeg"), class: "card-img-top" %>
- <%# <%= image_tag instrument.photo, class: "card-img-top" %> 
+ <%= image_tag "piano.jpeg", class: "card-img-top" %>
+ <%# <%= image_tag instrument.photo, class: "card-img-top" %>
   <div class="card-body">
     <h5 class="card-title"><%= instrument[:brand] %></h5>
     <p class="card-text"><strong><%= instrument[:category] %></strong></p>
@@ -42,4 +42,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
-
