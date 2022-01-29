@@ -1,0 +1,8 @@
+<%= simple_form_for @instrument do |f| %>
+  <%= f.input :category, collection: Instrument.categories.keys %>
+  <%= f.input :brand %>
+  <%= f.input :location %>
+  <%= f.input :condition, collection: Instrument.conditions.keys %>
+  <%= f.input :renting_price %>
+  <%= f.button :submit %>
+<% end %>
