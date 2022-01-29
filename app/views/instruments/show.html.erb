@@ -1,11 +1,19 @@
-<h1>instruments#show</h1>
-<p>category: <%= @instrument[:category] %></p>
-<p>brand: <%= @instrument[:brand] %></p>
-<p>location: <%= @instrument[:location] %></p>
-<p>condtion: <%= @instrument[:condtion] %></p>
-<p>availability: <%= @instrument[:availability] %></p>
-<p>renting_price: <%= @instrument[:renting_price] %></p>
-<p>user: <%= @instrument.user[:email] %></p>
+<div class="index-banner">
+<h1><%= @instrument[:brand] %></h1>
+</div>
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @instrument[:category].capitalize  %></p></h1>
+  <p class="lead mt-3">Price for rents: <%= @instrument[:renting_price]%> yen</p>
+  <hr class="my-4">
+  <p>location: <%= @instrument[:location] %></p>
+  <p>availability: <%= @instrument[:availability] %></p>
+  <p>condtion: <%= @instrument[:condtion] %></p>
+  <p>contacts: <%= @instrument.user[:email] %></p>
+  </p>
+</div>
+
+
 <% @instrument.photos.each do |photo| %>
   <%= image_tag(photo) %>
 <% end %>
