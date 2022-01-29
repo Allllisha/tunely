@@ -23,3 +23,19 @@
     border-radius: 5px;
   }
 }
+
+.index-banner{
+  background-image: asset_url("banner1.jpeg");
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  min-height: 45vh;
+  color: #eee;
+  padding-top: 17vh;
+  margin:0;
+  h1{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+}
