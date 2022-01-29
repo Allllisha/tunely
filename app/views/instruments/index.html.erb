@@ -18,7 +18,9 @@
     <li class="list-group-item">location: <%= instrument[:location] %></li>
     <li class="list-group-item">condtion: <%= instrument[:condtion] %></li>
     <li class="list-group-item">availability: <%= instrument[:availability] %></li>
+     <% if user_signed_in? %>
     <li class="list-group-item">user: <%= instrument.user[:email] %></li>
+     <% end %>
   </ul>
 </div>
 <% end %>
