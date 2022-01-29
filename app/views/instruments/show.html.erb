@@ -6,3 +6,10 @@
 <p>availability: <%= @instrument[:availability] %></p>
 <p>renting_price: <%= @instrument[:renting_price] %></p>
 <p>user: <%= @instrument.user[:email] %></p>
+<div class="container">
+  <%= simple_form_for [@instrument, @booking] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+</div>

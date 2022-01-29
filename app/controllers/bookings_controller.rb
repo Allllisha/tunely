@@ -13,7 +13,7 @@ before_action :find_booking, only: [:destroy, :update]
     @booking.instrument = @instrument
     authorize @booking
     if @booking.save
-      @booking.pending
+      @booking.pending!
       redirect_to instrument_bookings_path
     else
       render "instrument/show"
@@ -42,7 +42,7 @@ before_action :find_booking, only: [:destroy, :update]
   end
 
   def find_instrument
-    @instrument = Instrument(params[:instrument_id])
+    @instrument = Instrument.find(params[:instrument_id])
   end
 
   def find_booking
