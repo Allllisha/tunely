@@ -13,6 +13,7 @@ class InstrumentsController < ApplicationController
 
   def new
     @instrument = Instrument.new
+    @booking = Booking.new
     authorize @instrument
   end
 

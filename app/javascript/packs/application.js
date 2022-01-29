@@ -18,9 +18,9 @@ import Glide from '@glidejs/glide'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here
-  const config = {
+  new Glide('.glide', {
     type: "carousel",
-    perView: 1
-  }
-  new Glide('.glide').mount()
+    perView: 1,
+    autoplay: 3000
+  }).mount()
 });
