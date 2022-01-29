@@ -1,0 +1,17 @@
+.glide__slides {
+  height: 500px;
+
+  .glide__slide {
+    height: 500px;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+.instrument-details-flexbox {
+  display: flex;
+}

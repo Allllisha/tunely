@@ -14,3 +14,13 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+import Glide from '@glidejs/glide'
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here
+  const config = {
+    type: "carousel",
+    perView: 1
+  }
+  new Glide('.glide').mount()
+});

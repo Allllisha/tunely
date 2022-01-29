@@ -1,18 +1,38 @@
-<h1>instruments#show</h1>
-<p>category: <%= @instrument[:category] %></p>
-<p>brand: <%= @instrument[:brand] %></p>
-<p>location: <%= @instrument[:location] %></p>
-<p>condtion: <%= @instrument[:condtion] %></p>
-<p>availability: <%= @instrument[:availability] %></p>
-<p>renting_price: <%= @instrument[:renting_price] %></p>
-<p>user: <%= @instrument.user[:email] %></p>
-<% @instrument.photos.each do |photo| %>
-  <%= image_tag(photo) %>
-<% end %>
-<div class="container">
-  <%= simple_form_for [@instrument, @booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit class: 'btn btn-primary' %>
+
+
+<div class="container instrument-details-flexbox">
+  <div style="flex: 1; min-width: 0">
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <% @instrument.photos.each do |photo| %>
+            <li class="glide__slide"><%= image_tag(photo) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+      </div>
+    </div>
+    <p>category: <%= @instrument[:category] %></p>
+    <p>brand: <%= @instrument[:brand] %></p>
+    <p>location: <%= @instrument[:location] %></p>
+    <p>condtion: <%= @instrument[:condition] %></p>
+    <p>renting_price: <%= @instrument[:renting_price] %></p>
+  </div>
+
+  <div>
+    <% @instrument.bookings.each do |booking| %>
+      <p>Not available from <%= booking[:start_date] %> to <%= booking[:end_date] %></p>
     <% end %>
+    <p>user: <%= @instrument.user[:email] %></p>
+    <%= simple_form_for [@instrument, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+
+
 </div>
