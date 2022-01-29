@@ -6,3 +6,6 @@
 <p>availability: <%= @instrument[:availability] %></p>
 <p>renting_price: <%= @instrument[:renting_price] %></p>
 <p>user: <%= @instrument.user[:email] %></p>
+<% @instrument.photos.each do |photo| %>
+  <%= image_tag(photo) %>
+<% end %>
