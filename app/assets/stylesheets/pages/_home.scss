@@ -2,6 +2,10 @@
 // .howto-container{
 //   display: ;
 // }
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
 
 .cards {
   display: flex;
@@ -36,7 +40,6 @@ flex-shrink: 0;
 .premium{
   border: solid $purple;
   flex-shrink: 0;
-  margin: 30px;
 }
 
 .premium h1{
@@ -69,4 +72,24 @@ flex-shrink: 0;
 h6{
   margin-top: 0;
   color: darkgray;
+}
+
+.footer {
+  margin-top: 50px;
+  text-align: center;
+  padding: 40px;
+  background-color: $black;
+}
+
+.footer a {
+  font-size: 30px;
+  color:  #740032;
+}
+
+.footer p {
+  color: #6B6C6C;
+}
+
+.footer .fas {
+  color:  $purple;
 }
