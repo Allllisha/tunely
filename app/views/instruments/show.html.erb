@@ -1,28 +1,62 @@
-<div class="index-banner">
-<h1><%= @instrument[:brand] %></h1>
-</div>
+<div class="container instrument-details-flexbox">
+  <div class="instrument-infos instrument-photos">
+    <h1><%= @instrument[:category].capitalize %></h1>
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <% @instrument.photos.each do |photo| %>
+            <li class="glide__slide"><%= image_tag(photo) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+      </div>
+    </div>
+  </div>
 
-<div class="jumbotron">
-  <h1 class="display-4"><%= @instrument[:category].capitalize  %></p></h1>
-  <p class="lead mt-3">Price for rents: <%= @instrument[:renting_price]%> yen</p>
-  <hr class="my-4">
-  <p>location: <%= @instrument[:location] %></p>
-  <p>availability: <%= @instrument[:availability] %></p>
-  <p>condtion: <%= @instrument[:condtion] %></p>
-  <p>contacts: <%= @instrument.user[:email] %></p>
-  </p>
-</div>
-
-
-<% @instrument.photos.each do |photo| %>
-  <%= image_tag(photo) %>
-<% end %>
-<div class="container">
-  <%= simple_form_for [@instrument, @booking] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.submit class: 'btn btn-primary' %>
-    <% end %>
+  <div>
+    <div class="instrument-infos">
+      <table><tbody>
+        <tr>
+          <td class="info-header">Brand</td>
+          <td><%= @instrument[:brand] %></p></td>
+        </tr>
+        <tr>
+          <td class="info-header">Location</td>
+          <td><%= @instrument[:location] %></td>
+        </tr>
+        <tr>
+          <td class="info-header">Condtion</td>
+          <td><%= @instrument[:condition] %></td>
+        </tr>
+        <tr>
+          <td class="info-header">Renting price</td>
+          <td><%= @instrument[:renting_price] %> JPY/day</td>
+        </tr>
+        <tr>
+          <td class="info-header">Owner</td>
+          <td><%= "#{@instrument.user[:first_name]} #{@instrument.user[:last_name]}" %></td>
+        </tr>
+      </tbody></table>
+      <% unless @instrument.bookings.empty? %>
+        <hr>
+        <p>Not available</p>
+        <% @instrument.bookings.each do |booking| %>
+          <p>From <%= booking[:start_date] %> to <%= booking[:end_date] %></p>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="instrument-infos">
+      <h4>Make a booking</h4>
+      <%= simple_form_for [@instrument, @booking] do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.submit 'Book', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div class="footer">
