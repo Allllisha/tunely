@@ -1,0 +1,12 @@
+<div class="container">
+<h2>My bookings</h2>
+  <div>
+    <% @bookings.each do |booking| %>
+      <% if booking.pending? %>
+        <i class="fas fa-spinner mt-2 mx-2" data-toggle="tooltip" data-placement="top" title="Pending" style="font-size:25px"></i>
+      <% elsif booking.accepted? %>
+        <i class="fas fa-calendar-check"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
