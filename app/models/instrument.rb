@@ -17,7 +17,7 @@ class Instrument < ApplicationRecord
     :doublebass,
     :frenchhorn,
     :flute,
-    :guiter,
+    :guitar,
     :harp,
     :keybord,
     :oboe,

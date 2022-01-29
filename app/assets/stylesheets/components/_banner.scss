@@ -1,0 +1,18 @@
+.home-banner {
+  background-image: asset_url("banner.jpeg");
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  min-height: 70vh;
+  color: #eee;
+  padding-top: 17vh;
+  margin:0;
+  h1{
+    margin-left: 30px;
+    font-size: 100px;
+  }
+  p{
+    margin-left: 30px;
+    font-size: 40px;
+  }
+}
