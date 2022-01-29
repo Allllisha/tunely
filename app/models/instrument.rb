@@ -1,18 +1,39 @@
 class Instrument < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+
+  has_many :bookings, dependent: :destroy
   has_many_attached :photos
 
   validates :category, :location, :renting_price, presence: true
   validates :renting_price, inclusion: { in: 1.. }, numericality: { only_integer: true }
 
   enum category: [
+    :altosaxphone,
+    :bass,
+    :bassclarinet,
+    :cello,
+    :clarinet,
+    :drum,
+    :doublebass,
+    :frenchhorn,
+    :flute,
+    :guiter,
+    :harp,
+    :keybord,
+    :oboe,
+    :piano,
+    :piccolo,
     :trumpet,
-    :violin
+    :viola,
+    :violin,
+    :xylophone
   ]
 
   enum condition: [
+    :mint,
+    :verygood,
     :good,
-    :bad
+    :bad,
+    :old,
   ]
 end
