@@ -1,4 +1,6 @@
 class InstrumentsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   def index
     @instruments = policy_scope(Instrument)
   end
@@ -25,7 +27,7 @@ class InstrumentsController < ApplicationController
 
   def instrument_params
     params.require(:instrument).permit(
-      :category, :brand, :location, :condition, :renting_price
+      :category, :brand, :location, :condition, :renting_price, photos: []
     )
   end
 end

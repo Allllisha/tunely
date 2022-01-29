@@ -1,8 +1,11 @@
-<%= simple_form_for @instrument do |f| %>
-  <%= f.input :category, collection: Instrument.categories.keys %>
-  <%= f.input :brand %>
-  <%= f.input :location %>
-  <%= f.input :condition, collection: Instrument.conditions.keys %>
-  <%= f.input :renting_price %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @instrument do |f| %>
+    <%= f.input :category, collection: Instrument.categories.keys %>
+    <%= f.input :brand %>
+    <%= f.input :location %>
+    <%= f.input :condition, collection: Instrument.conditions.keys %>
+    <%= f.input :renting_price %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
