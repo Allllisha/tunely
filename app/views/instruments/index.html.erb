@@ -2,27 +2,56 @@
 <h1>Instruments</h1>
 </div>
 
+<h1>Violin</h1>
+<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<% @violins.each do |violin| %>
+<div class ="box" >
+<div class="" style="width: 18rem;">
+<% unless violin.photos.empty? %>
+ <%= cl_image_tag violin.photos.first.key, :width => '300px', :height => '150px', class: "card-img-top"%>
+ <% end %>
+  <div class="card-body mb-4">  
+    <h5 class="card-title"><%= link_to violin[:brand], instrument_path(violin), class: "instrument-title" %></h5>
+    <p class="card-text"><%= violin[:category] %></p>
+    <p class="card-text"><%= violin[:renting_price] %> JPY/day</p>
+    <i class="far fa-heart like-btn"></i>
+    <p class ="border mt-3 mb-2"></p>
+    <p class="card-text">Owner: <%= violin.user[:first_name]%> <%= violin.user[:last_name] %></p>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
+
+<h1>All Instruments</h1>
 <div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
 <% @instruments.each do |instrument| %>
-
-<div class="card" style="width: 18rem;">
- <%= image_tag "piano.jpg", class: "card-img-top" %>
- <%# <%= image_tag instrument.photo, class: "card-img-top" %>
-  <div class="card-body">
-    <h5 class="card-title"><%= instrument[:brand] %></h5>
-    <p class="card-text"><strong><%= instrument[:category] %></strong></p>
-    <p class="card-text"><%= instrument[:renting_price] %> yen</p>
-    <%= link_to "Check", instrument_path(instrument), class: "btn btn-primary" %>
+<div class ="box" >
+<div class="" style="width: 18rem;">
+<% unless instrument.photos.empty? %>
+ <%= cl_image_tag instrument.photos.first.key, :width => '300px', :height => '150px', class: "card-img-top"%>
+ <% end %>
+  <div class="card-body mb-4">
+  
+  <%# <span class="badge badge-pill badge-danger">Not available</span> %>
+  
+    <h5 class="card-title"><%= link_to instrument[:brand], instrument_path(instrument), class: "instrument-title" %></h5>
+    <p class="card-text"><%= instrument[:category] %></p>
+    <p class="card-text"><%= instrument[:renting_price] %> JPY/day</p>
+    <i class="far fa-heart like-btn"></i>
+    <p class ="border mt-3 mb-2"></p>
+    <p class="card-text">Owner: <%= instrument.user[:first_name]%> <%= instrument.user[:last_name] %></p>
   </div>
-   <ul class="list-group list-group-flush">
-    <li class="list-group-item">category: <%= instrument[:category] %></li>
-    <li class="list-group-item">location: <%= instrument[:location] %></li>
-    <li class="list-group-item">condtion: <%= instrument[:condtion] %></li>
-    <li class="list-group-item">availability: <%= instrument[:availability] %></li>
-     <% if user_signed_in? %>
-    <li class="list-group-item">Owner: <%= instrument.user[:email] %></li>
-     <% end %>
-  </ul>
+</div>
+   <%# <ul class="list-group list-group-flush">
+    <%# <li class="list-group-item">category: <%= instrument[:category] %>
+    <%# <li class="list-group-item">location: <%= instrument[:location] %>
+    <%# <li class="list-group-item">condtion: <%= instrument[:condition] %>
+    <%# <li class="list-group-item">availability: <%= instrument[:availability] %>
+     <%# <% if user_signed_in? %> 
+
+     <%# <% end %> 
+  <%# </ul> %> 
 </div>
 <% end %>
 </div>

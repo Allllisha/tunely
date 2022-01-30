@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -15,6 +16,9 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 import Glide from '@glidejs/glide'
+require('jquery')
+
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here

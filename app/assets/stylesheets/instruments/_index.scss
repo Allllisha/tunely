@@ -1,2 +1,55 @@
 // Import page-specific CSS files here.
 @import "show";
+
+.instrument-container{
+  margin-top: 20px;
+ }
+ 
+ .card{
+   padding: 0;
+   .card-text{
+     margin-bottom: 5px;
+   }
+ }
+ .card-img-top{
+   object-fit: cover;
+ }
+
+ .card-body{
+   background-color: white;
+   display: flex;
+   justify-content: center;
+   align-self: center;
+   flex-direction: column;
+ }
+
+ .instrument-title{
+  color: $black;
+ }
+
+ .like-btn {
+  font-size: 25px;
+  color: #808080;
+  margin-top: 10px;
+  }
+
+ 
+ .unlike-btn {
+  font-size: 25px;
+  color: #e54747;
+  margin-left: 20px;
+  margin-top: 10px;
+  }
+ 
+//   .img_container {
+//     position:relative;
+//     display:inline-block;
+//     text-align:center;
+// }
+
+// .badge {
+//   position:absolute;
+//   // right:10px;
+//   // width:100px;
+//   // height:30px;
+// }

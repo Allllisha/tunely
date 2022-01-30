@@ -2,6 +2,7 @@ class InstrumentsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
+    @violins = Instrument.where('brand LIKE ?', 'Stradivarius%').all
     @instruments = policy_scope(Instrument)
   end
 
