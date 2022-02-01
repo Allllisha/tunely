@@ -17,7 +17,7 @@ import "controllers"
 import "bootstrap"
 import Glide from '@glidejs/glide'
 require('jquery')
-
+require("scroll.js")
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -28,3 +28,6 @@ document.addEventListener('turbolinks:load', () => {
     autoplay: 3000
   }).mount()
 });
+
+
+

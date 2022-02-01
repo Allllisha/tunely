@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <div class="logo">
-     <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag asset_url("tunely_logo.png"), class: "mr-2"%>Tunely
+     <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag asset_url("tunely.png"), class: "mr-2"%>
     <% end %>
   </div>
   <ul class="navbar-nav me-auto">
@@ -16,9 +16,13 @@
         
         <div class="menu">
           <ul>
-            <li><a href="#">Piano</a></li>
-            <li><a href="#">Violin</a></li>
-            <li><a href="#">Cello</a></li>
+          <li><a href="instruments#update">New instruments</a></li>
+            <li><a href="instruments#piano">Piano & keyboard</a></li>
+            <li><a href="instruments#strings">Strings</a></li>
+            <li><a href="instruments#brass">Brass</a></li>
+            <li><a href="instruments#woodwind">Woodwind</a></li>
+             <li><a href="instruments#percussion">Percussion</a></li>
+             <li><a href="instruments#guitar">Guiter and Bass</a></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
           </ul>
         </div>

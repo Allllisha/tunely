@@ -16,7 +16,7 @@
  }
 
  .card-body{
-   background-color: white;
+   background-color: rgb(250, 246, 246);
    display: flex;
    justify-content: center;
    align-self: center;
@@ -41,15 +41,44 @@
   margin-top: 10px;
   }
  
-//   .img_container {
-//     position:relative;
-//     display:inline-block;
-//     text-align:center;
-// }
+#update{
+ text-align: center;
+ margin-top: 30px;
+ margin-bottom: 30px; 
+}
 
-// .badge {
-//   position:absolute;
-//   // right:10px;
-//   // width:100px;
-//   // height:30px;
-// }
+#piano{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+
+#strings{
+  text-align: center; 
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+
+#brass{
+  text-align: center; 
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+
+#woodwind{
+  text-align: center; 
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+
+#percussion{
+  text-align: center; 
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+
+#guitar{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
