@@ -8,9 +8,26 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+import Glide from '@glidejs/glide'
+require('jquery')
+require("scroll.js")
+
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here
+  new Glide('.glide', {
+    type: "carousel",
+    perView: 1,
+    autoplay: 3000
+  }).mount()
+});
+
+
+

@@ -1,5 +1,8 @@
+
 .home-banner {
-  background-image: asset_url("banner.jpeg");
+  background-image:
+  linear-gradient(to bottom, rgba(38, 179, 230, 0.52), rgba(86, 13, 233, 0.73)),
+  asset_url("banner.jpeg");
   background-position: center;
   background-size: cover;
   object-fit: cover;
@@ -10,9 +13,40 @@
   h1{
     margin-left: 30px;
     font-size: 100px;
+    font-family: "Bold-font";
   }
   p{
     margin-left: 30px;
     font-size: 40px;
+    font-family: 'PT Serif', serif;
+    @media screen and (max-width: 767px) {
+      margin-left: 30px;
+      font-size: 30px;
+      font-family: 'PT Serif', serif;
+    }
+  }
+
+  .btn{
+    margin-top: 20px;
+    margin-left: 30px;
+    color:$white;
+    background-color: $black;
+    border-radius: 5px;
+  }
+}
+
+.index-banner{
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  min-height: 45vh;
+  color: $black;
+  padding-top: 17vh;
+  margin:0;
+  h1{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: "Bold-font";
   }
 }

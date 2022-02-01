@@ -1,12 +1,173 @@
-<h1>instruments#index</h1>
-<% @instruments.each do |instrument| %>
-  <p>category: <%= instrument[:category] %></p>
-  <p>brand: <%= instrument[:brand] %></p>
-  <p>location: <%= instrument[:location] %></p>
-  <p>condtion: <%= instrument[:condtion] %></p>
-  <p>availability: <%= instrument[:availability] %></p>
-  <p>renting_price: <%= instrument[:renting_price] %></p>
-  <p>user: <%= instrument.user[:email] %></p>
-  <%= link_to "show", instrument_path(instrument) %>
-  <br>
+<div class="index-banner">
+<h1>Instruments</h1>
+</div>
+
+
+<h2 id="update">New Updates</h2>
+<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<% @fours.each do |four| %>
+<div class ="box" >
+<div class="" style="width: 18rem;">
+<% unless four.photos.empty? %>
+ <%= cl_image_tag four.photos.first.key, :width => '300px', :height => '150px', class: "card-img-top"%>
+ <% end %>
+  <div class="card-body mb-4">  
+    <h5 class="card-title"><%= link_to four[:brand], instrument_path(four), class: "instrument-title" %></h5>
+    <p class="card-text"><%= four[:category] %></p>
+    <p class="card-text"><%= four[:renting_price] %> JPY/day</p>
+    <i class="far fa-heart like-btn"></i>
+    <p class ="border mt-3 mb-2"></p>
+    <p class="card-text">Owner: <%= four.user[:first_name]%> <%= four.user[:last_name] %></p>
+  </div>
+</div>
+</div>
 <% end %>
+</div>
+
+<h2 id="piano">Piano & Keyboard</h2>
+<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<% @keyboards.each do |keyboard| %>
+<div class ="box" >
+<div class="" style="width: 18rem;">
+<% unless keyboard.photos.empty? %>
+ <%= cl_image_tag keyboard.photos.first.key, :width => '300px', :height => '150px', class: "card-img-top"%>
+ <% end %>
+  <div class="card-body mb-4">  
+    <h5 class="card-title"><%= link_to keyboard[:brand], instrument_path(keyboard), class: "instrument-title" %></h5>
+    <p class="card-text"><%= keyboard[:category] %></p>
+    <p class="card-text"><%= keyboard[:renting_price] %> JPY/day</p>
+    <i class="far fa-heart like-btn"></i>
+    <p class ="border mt-3 mb-2"></p>
+    <p class="card-text">Owner: <%= keyboard.user[:first_name]%> <%= keyboard.user[:last_name] %></p>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
+
+<h2 id="strings">Strings</h2>
+<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<% @strings.each do |string| %>
+<div class ="box" >
+<div class="" style="width: 18rem;">
+<% unless string.photos.empty? %>
+ <%= cl_image_tag string.photos.first.key, :width => '300px', :height => '150px', class: "card-img-top"%>
+ <% end %>
+  <div class="card-body mb-4">  
+    <h5 class="card-title"><%= link_to string[:brand], instrument_path(string), class: "instrument-title" %></h5>
+    <p class="card-text"><%= string[:category] %></p>
+    <p class="card-text"><%= string[:renting_price] %> JPY/day</p>
+    <i class="far fa-heart like-btn"></i>
+    <p class ="border mt-3 mb-2"></p>
+    <p class="card-text">Owner: <%= string.user[:first_name]%> <%= string.user[:last_name] %></p>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
+
+
+<h2 id="brass">Brass</h2>
+<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<% @brasses.each do |brass| %>
+<div class ="box" >
+<div class="" style="width: 18rem;">
+<% unless brass.photos.empty? %>
+ <%= cl_image_tag brass.photos.first.key, :width => '300px', :height => '150px', class: "card-img-top"%>
+ <% end %>
+  <div class="card-body mb-4">  
+    <h5 class="card-title"><%= link_to brass[:brand], instrument_path(brass), class: "instrument-title" %></h5>
+    <p class="card-text"><%= brass[:category] %></p>
+    <p class="card-text"><%= brass[:renting_price] %> JPY/day</p>
+    <i class="far fa-heart like-btn"></i>
+    <p class ="border mt-3 mb-2"></p>
+    <p class="card-text">Owner: <%= brass.user[:first_name]%> <%= brass.user[:last_name] %></p>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
+
+
+
+<h2 id="woodwind">Woodwind</h2>
+<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<% @woodwinds.each do |woodwind| %>
+<div class ="box" >
+<div class="" style="width: 18rem;">
+<% unless woodwind.photos.empty? %>
+ <%= cl_image_tag woodwind.photos.first.key, :width => '300px', :height => '150px', class: "card-img-top"%>
+ <% end %>
+  <div class="card-body mb-4">  
+    <h5 class="card-title"><%= link_to woodwind[:brand], instrument_path(woodwind), class: "instrument-title" %></h5>
+    <p class="card-text"><%= woodwind[:category] %></p>
+    <p class="card-text"><%= woodwind[:renting_price] %> JPY/day</p>
+    <i class="far fa-heart like-btn"></i>
+    <p class ="border mt-3 mb-2"></p>
+    <p class="card-text">Owner: <%= woodwind.user[:first_name]%> <%= woodwind.user[:last_name] %></p>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
+
+<h2 id="percussion">Percussion</h2>
+<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<% @percussions.each do |percussion| %>
+<div class ="box" >
+<div class="" style="width: 18rem;">
+<% unless percussion.photos.empty? %>
+ <%= cl_image_tag percussion.photos.first.key, :width => '300px', :height => '150px', class: "card-img-top"%>
+ <% end %>
+  <div class="card-body mb-4">  
+    <h5 class="card-title"><%= link_to percussion[:brand], instrument_path(percussion), class: "instrument-title" %></h5>
+    <p class="card-text"><%= percussion[:category] %></p>
+    <p class="card-text"><%= percussion[:renting_price] %> JPY/day</p>
+    <i class="far fa-heart like-btn"></i>
+    <p class ="border mt-3 mb-2"></p>
+    <p class="card-text">Owner: <%= percussion.user[:first_name]%> <%= percussion.user[:last_name] %></p>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
+
+<h2 id="guitar">Guitar and Bass</h2>
+<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<% @guitars.each do |guitar| %>
+<div class ="box" >
+<div class="" style="width: 18rem;">
+<% unless guitar.photos.empty? %>
+ <%= cl_image_tag guitar.photos.first.key, :width => '300px', :height => '150px', class: "card-img-top"%>
+ <% end %>
+  <div class="card-body mb-4">  
+    <h5 class="card-title"><%= link_to guitar[:brand], instrument_path(guitar), class: "instrument-title" %></h5>
+    <p class="card-text"><%= guitar[:category] %></p>
+    <p class="card-text"><%= guitar[:renting_price] %> JPY/day</p>
+    <i class="far fa-heart like-btn"></i>
+    <p class ="border mt-3 mb-2"></p>
+    <p class="card-text">Owner: <%= guitar.user[:first_name]%> <%= guitar.user[:last_name] %></p>
+  </div>
+</div>
+</div>
+<% end %>
+</div>
+
+
+  <footer class="footer">
+    <div class="row">
+      <div class="col-6">
+        <p><i class="fa fa-phone" aria-hidden="true"></i> +44 (0)123 456 789</p>
+			<p><i class="fa fa-envelope" aria-hidden="true"></i> info@tunely.com</p>
+      </div>
+      <div class="col-6" style="text-align: right;">
+        <h3>Tunely</h3>
+        <p>111 Meguro-ku, Tokyo, 111-111</p>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-12">&copy; 2022 Taktivent - <a href="#">Facebook</a> - <a href="#">Twitter</a></div>
+    </div>
+</footer>

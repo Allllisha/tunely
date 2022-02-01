@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: transparent;
+  margin-bottom: 1.5px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +9,65 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 43px;
 }
+
+
+.navbar-brand{
+text-decoration: none;
+color: $white;
+  &:hover{
+    color: $black;
+  }
+}
+
+.logo{
+  img{
+    width: 40px;
+  }
+}
+
+.menu {
+  position: fixed;
+  right: -270px;
+  top: 0;
+  height: 100%;
+  width: 270px;
+  padding-top: 4rem;
+  background: linear-gradient(180deg, #ffffff9f 0%, #0000004d 100%);
+  transition: right 350ms;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding: 20px;
+  transition: all 250ms;
+}
+
+.menu a:hover {
+  background-color: #111;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle-btn {
+  font-size: 2rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  z-index: 2000;
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+#menu-toggle:checked ~ .menu {right: 0;}
+#menu-toggle:checked ~ #menu-toggle-btn {color: #fff;}

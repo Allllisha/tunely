@@ -1,0 +1,84 @@
+// Import page-specific CSS files here.
+@import "show";
+
+.instrument-container{
+  margin-top: 20px;
+ }
+ 
+ .card{
+   padding: 0;
+   .card-text{
+     margin-bottom: 5px;
+   }
+ }
+ .card-img-top{
+   object-fit: cover;
+ }
+
+ .card-body{
+   background-color: rgb(250, 246, 246);
+   display: flex;
+   justify-content: center;
+   align-self: center;
+   flex-direction: column;
+ }
+
+ .instrument-title{
+  color: $black;
+ }
+
+ .like-btn {
+  font-size: 25px;
+  color: #808080;
+  margin-top: 10px;
+  }
+
+ 
+ .unlike-btn {
+  font-size: 25px;
+  color: #e54747;
+  margin-left: 20px;
+  margin-top: 10px;
+  }
+ 
+#update{
+ text-align: center;
+ margin-top: 30px;
+ margin-bottom: 30px; 
+}
+
+#piano{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+
+#strings{
+  text-align: center; 
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+
+#brass{
+  text-align: center; 
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+
+#woodwind{
+  text-align: center; 
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+
+#percussion{
+  text-align: center; 
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+
+#guitar{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}

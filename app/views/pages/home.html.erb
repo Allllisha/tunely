@@ -1,38 +1,83 @@
 <div class="home-banner">
 <h1>Tunely</h1>
 <p>Let's make music from today!</p>
+ <%= link_to "Find instruments", instruments_path, class: "btn btn-outline-dark"%>
 </div>
 
  <div class="container">
     <h2 class="text-center">How it works</h2>
-    
     <div class="cards">
      
       <div class="card basic">
-        <h1>€50~</h1>
-        <h6>per rent</h6>
-        <h4>Basic</h4>
+        <h1><i class="fas fa-search"></i></h1>
+        <h6>Find Instruments</h6>
+        <h4>Search</h4>
        <p class = border></p>
-        <p>Would you like to rent an instrument just one time? you can pick an instrument.</p>
+        <p>Would you like to rent an instrument? Pick your instument.</p>
       </div>
     
       <div class="card unlimited">
-        <h1>€200~</h1>
-        <h6>per month</h6>
-          <h4>Unlimited</h4>
+        <h1><i class="fas fa-book-open"></i></h1>
+        <h6>Rent Instruments</h6>
+          <h4>Booking</h4>
           <p class = border></p>
-        <p>One day before the performance? You can get fast delivery and insurances free. No limitations renting time in the month!</p>
+        <p>Book your choosed instrument. When your booking is approved by owner, you can pay rental fee with easy payment system. </p>
       </div>
 
       <div class="card premium">
-        <h1>€100~</h1>
-        <h6>per rent</h6>
-        <h4>Premium</h4>
+        <h1><i class="fas fa-guitar"></i></h1>
+        <h6>Get Instruments</h6>
+        <h4>Play</h4>
         <p class = border></p>
-        <p>You would like to rent instruments with delivery and insurances all inclusive?</p>
+        <p>You can get instruments with different method, it's totally up to both you and owner. After get it, Now is the time to play!!!</p>
       </div>
-      
-
      </div>
     </div>
   </div>
+
+<div class="search">
+</div>
+
+<div class="wrapper">
+<div class="box">
+<div class="glasses col-6">
+<% instruments = ["piano", "violin", "cello", "flute"] %>
+<% instruments.each do |instrument| %>
+ <div class="glass add">
+<h2><a href="instruments#update"><%= instrument %></a></h2>
+</div>
+  <% end %>
+</div>
+<div class="glass-2 col-5">
+<h1 class= mt-3>Why Rent My Instrument?</h1>
+<hr>
+<h3>If you’re just starting out in the music world, </h3>
+<h3>you may think that being a guitar player, 
+<h3>for example, is the coolest thing ever.</h3>
+   <%= image_tag asset_url("try.jpeg"), :width => '500px', :height => '250px', alt: "people", class: "image"%>
+ <h3>You might pick one up, get a few lessons in...
+<h3>Renting instruments allows you to figure out</h3>
+<h3> which ones were made for you. </h3>
+</div>
+</div>
+   <%= image_tag asset_url("musician1.png"), :width => '500px', :height => '250px', alt: "people", class: "musician"%>
+</div>
+
+
+  <footer class="footer">
+    <div class="row">
+      <div class="col-6">
+        <p><i class="fa fa-phone" aria-hidden="true"></i> +44 (0)123 456 789</p>
+			<p><i class="fa fa-envelope" aria-hidden="true"></i> info@tunely.com</p>
+      </div>
+      <div class="col-6" style="text-align: right;">
+        <h3>Tunely</h3>
+        <p>111 Meguro-ku, Tokyo, 111-111</p>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-12">&copy; 2022 Taktivent - <a href="#">Facebook</a> - <a href="#">Twitter</a></div>
+    </div>
+</footer>
