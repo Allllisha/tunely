@@ -31,6 +31,3 @@ document.addEventListener('turbolinks:load', () => {
     autoplay: 3000
   }).mount();
 });
-
-
-
