@@ -2,30 +2,29 @@
   <div class="d-flex justify-content-center">
   <h2> <%= current_user.first_name %> 's bookings</h2>
   </div>
-<div class="container">
-  <div class="justify-content-center">
-    <% @bookings.each do |booking| %>
-      <div class="row">
-        <div class="col-4">
-          <a class="<%= 'active' if params[:tab] == "converstions" %> tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">My Instrument</a>
-        </div>
-        <div class="col-4">
-          <a class="<%= 'active' if params[:tab] == "bookings" || params[:tab].nil? %> tab-underlined" id="home-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="home" aria-selected="true">Details</a>
-        </div>
-        <div class="col-4">
-          <% if booking.pending? %>
-            <i class="fas fa-spinner mt-2 mx-2" data-toggle="tooltip" data-placement="top" title="Pending" style="font-size:25px"></i>
-          <% elsif booking.accepted? %>
-            <i class="fas fa-calendar-check mt-2 mx-2"></i>
-          <% else %>
-            <i class="far fa-times-circle mt-2 mx-2" style="font-size: 25px"></i>
-          <% end %>
-        </div>
+    <div class="container">
+      <div class="justify-content-center">
+        <% @bookings.each do |booking| %>
+          <div class="row">
+            <div class="col-4">
+              <a class="<%= 'active' if params[:tab] == "conversations" %> tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">My Instrument</a>
+            </div>
+            <div class="col-4">
+              <a class="<%= 'active' if params[:tab] == "bookings" || params[:tab].nil? %> tab-underlined" id="home-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="home" aria-selected="true">Details</a>
+            </div>
+            <div class="col-4">
+              <% if booking.pending? %>
+                <i class="fas fa-spinner mt-2 mx-2" data-toggle="tooltip" data-placement="top" title="Pending" style="font-size:25px"></i>
+              <% elsif booking.accepted? %>
+                <i class="fas fa-calendar-check mt-2 mx-2"></i>
+              <% else %>
+                <i class="far fa-times-circle mt-2 mx-2" style="font-size: 25px"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
-  
+    </div>
   <% else %>
     <h1>Book to Tune in</h1>
-  <%end %>
+<%end %>

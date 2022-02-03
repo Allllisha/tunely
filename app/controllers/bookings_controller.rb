@@ -14,7 +14,7 @@ before_action :find_booking, only: [:destroy, :update]
     authorize @booking
     if @booking.save
       @booking.pending!
-      redirect_to instrument_bookings_path
+      redirect_to bookings_path
     else
       render "instrument/show"
     end
@@ -24,7 +24,7 @@ before_action :find_booking, only: [:destroy, :update]
     authorize @booking
     if @bookings.update(booking.params)
       flash[:notice] = "Booking is #{@booking.status}"
-      redirect_to instrument_bookings_path(@booking)
+      redirect_to bookings_path
     else
       render :update
     end
@@ -33,7 +33,7 @@ before_action :find_booking, only: [:destroy, :update]
   def destroy
     authorize @booking
     @booking.destroy
-    redirect_to instrument_bookings_path
+    redirect_to bookings_path
   end
 
   private
