@@ -16,7 +16,6 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 import Glide from '@glidejs/glide'
-require('jquery')
 import { initMapbox } from './map';
 import { initAutocomplete } from './init_autocomplete';
 
