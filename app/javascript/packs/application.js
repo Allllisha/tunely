@@ -16,8 +16,8 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 import Glide from '@glidejs/glide'
-require('jquery')
-require("scroll.js")
+
+
 
 
 document.addEventListener('turbolinks:load', () => {
