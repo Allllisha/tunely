@@ -8,6 +8,7 @@
           <div class="row">
             <div class="col-4">
               <a class="<%= 'active' if params[:tab] == "conversations" %> tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">My Instrument</a>
+              <%= cl_image_tag booking.instrument.photos.first.key, width: 80, height: 80, class: 'fit-cover rounded' %>
             </div>
             <div class="col-4">
               <a class="<%= 'active' if params[:tab] == "bookings" || params[:tab].nil? %> tab-underlined" id="home-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="home" aria-selected="true">Details</a>
