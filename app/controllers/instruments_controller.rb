@@ -9,6 +9,14 @@ class InstrumentsController < ApplicationController
     @woodwinds = Instrument.where(category: ["2","4","8","12","14"])
     @percussions = Instrument.where(category: ["5","18"])
     @guitars = Instrument.where(category: ["1","9"])
+    @instruments = Instrument.geocoded
+    @markers = @instruments.geocoded.map do |instrument|
+      {
+        lat: instrument.latitude,
+        lng: instrument.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { instrument: instrument })
+      }
+    end
     @instruments = policy_scope(Instrument)
   end
 

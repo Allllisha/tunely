@@ -9,7 +9,7 @@
 @import "font-awesome";
 @import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.core";
 @import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
-
+@import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
 
 // Your CSS partials
 @import "components/index";
