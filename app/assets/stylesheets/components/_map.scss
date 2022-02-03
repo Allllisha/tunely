@@ -1,0 +1,14 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.mapboxgl-ctrl-geocoder--input{
+  @media screen and (min-width: 640px) {
+    margin: 10px;
+  }
+}

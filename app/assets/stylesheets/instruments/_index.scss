@@ -1,10 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 // Import page-specific CSS files here.
 @import "show";
 
+#map{
+ height: 100vh;
+ position: sticky;
+ top: 0;
+}
 .instrument-container{
-  margin-top: 20px;
+  display: flex;
+ justify-content: space-evenly;
+  align-items: center;
  }
  
+ .instruments-all-container{
+  display: flex;
+  flex-direction: column;
+  padding: 0%;
+  background-color: #eeeee6;
+ }
  .card{
    padding: 0;
    .card-text{
@@ -82,3 +96,4 @@
   margin-top: 30px;
   margin-bottom: 30px; 
 }
+

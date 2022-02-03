@@ -17,16 +17,19 @@ import "controllers"
 import "bootstrap"
 import Glide from '@glidejs/glide'
 require('jquery')
-require("scroll.js")
+import { initMapbox } from './map';
+import { initAutocomplete } from './init_autocomplete';
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here
+  initMapbox();
+  initAutocomplete();
   new Glide('.glide', {
     type: "carousel",
     perView: 1,
     autoplay: 3000
-  }).mount()
+  }).mount();
 });
 
 

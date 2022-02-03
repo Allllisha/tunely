@@ -25,3 +25,8 @@ $headers-font: 'PT Serif', serif;
     font-family: "Bold-font";
     src: asset-url('MavelPoster-BlackItalic.otf') format('opentype');
   }
+
+  @font-face {
+    font-family: "c-font";
+    src: asset-url('CreattionDemo.otf') format('opentype');
+  }
