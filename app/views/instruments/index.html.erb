@@ -1,10 +1,14 @@
 <div class="index-banner">
 <h1>Instruments</h1>
+<%# <input type="search" id="address-input" placeholder="Where are we going?" /> %>
 </div>
 
 
-<h2 id="update">New Updates</h2>
-<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+
+<div class="main-container d-flex">
+<div class="instruments-all-container col-6">
+<h2 id="update" style="font-family: 'Great Vibes', cursive;">New Updates</h2>
+<div class="instrument-container my-box-light flex-wrap mb-2">
 <% @fours.each do |four| %>
 <div class ="box" >
 <div class="" style="width: 18rem;">
@@ -15,6 +19,7 @@
     <h5 class="card-title"><%= link_to four[:brand], instrument_path(four), class: "instrument-title" %></h5>
     <p class="card-text"><%= four[:category] %></p>
     <p class="card-text"><%= four[:renting_price] %> JPY/day</p>
+    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <%= four[:location] %></p>
     <i class="far fa-heart like-btn"></i>
     <p class ="border mt-3 mb-2"></p>
     <p class="card-text">Owner: <%= four.user[:first_name]%> <%= four.user[:last_name] %></p>
@@ -24,8 +29,8 @@
 <% end %>
 </div>
 
-<h2 id="piano">Piano & Keyboard</h2>
-<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<h2 id="piano"style="font-family: 'Great Vibes"; >Piano & Keyboard</h2>
+<div class="instrument-container my-box-light flex-wrap mb-2">
 <% @keyboards.each do |keyboard| %>
 <div class ="box" >
 <div class="" style="width: 18rem;">
@@ -36,6 +41,7 @@
     <h5 class="card-title"><%= link_to keyboard[:brand], instrument_path(keyboard), class: "instrument-title" %></h5>
     <p class="card-text"><%= keyboard[:category] %></p>
     <p class="card-text"><%= keyboard[:renting_price] %> JPY/day</p>
+    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <%= keyboard[:location] %></p>
     <i class="far fa-heart like-btn"></i>
     <p class ="border mt-3 mb-2"></p>
     <p class="card-text">Owner: <%= keyboard.user[:first_name]%> <%= keyboard.user[:last_name] %></p>
@@ -45,8 +51,8 @@
 <% end %>
 </div>
 
-<h2 id="strings">Strings</h2>
-<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<h2 id="strings" style="font-family: 'Great Vibes";>Strings</h2>
+<div class="instrument-container my-box-light flex-wrap mb-2">
 <% @strings.each do |string| %>
 <div class ="box" >
 <div class="" style="width: 18rem;">
@@ -57,6 +63,7 @@
     <h5 class="card-title"><%= link_to string[:brand], instrument_path(string), class: "instrument-title" %></h5>
     <p class="card-text"><%= string[:category] %></p>
     <p class="card-text"><%= string[:renting_price] %> JPY/day</p>
+     <p class="card-text"><i class="fas fa-map-marker-alt"></i> <%= string[:location] %></p>
     <i class="far fa-heart like-btn"></i>
     <p class ="border mt-3 mb-2"></p>
     <p class="card-text">Owner: <%= string.user[:first_name]%> <%= string.user[:last_name] %></p>
@@ -67,8 +74,8 @@
 </div>
 
 
-<h2 id="brass">Brass</h2>
-<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<h2 id="brass" style="font-family: 'Great Vibes";>Brass</h2>
+<div class="instrument-container my-box-light flex-wrap mb-2">
 <% @brasses.each do |brass| %>
 <div class ="box" >
 <div class="" style="width: 18rem;">
@@ -79,6 +86,7 @@
     <h5 class="card-title"><%= link_to brass[:brand], instrument_path(brass), class: "instrument-title" %></h5>
     <p class="card-text"><%= brass[:category] %></p>
     <p class="card-text"><%= brass[:renting_price] %> JPY/day</p>
+    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <%= brass[:location] %></p>
     <i class="far fa-heart like-btn"></i>
     <p class ="border mt-3 mb-2"></p>
     <p class="card-text">Owner: <%= brass.user[:first_name]%> <%= brass.user[:last_name] %></p>
@@ -90,8 +98,8 @@
 
 
 
-<h2 id="woodwind">Woodwind</h2>
-<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<h2 id="woodwind" style="font-family: 'Great Vibes";>Woodwind</h2>
+<div class="instrument-container my-box-light flex-wrap mb-2">
 <% @woodwinds.each do |woodwind| %>
 <div class ="box" >
 <div class="" style="width: 18rem;">
@@ -102,6 +110,7 @@
     <h5 class="card-title"><%= link_to woodwind[:brand], instrument_path(woodwind), class: "instrument-title" %></h5>
     <p class="card-text"><%= woodwind[:category] %></p>
     <p class="card-text"><%= woodwind[:renting_price] %> JPY/day</p>
+    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <%= woodwind[:location] %></p>
     <i class="far fa-heart like-btn"></i>
     <p class ="border mt-3 mb-2"></p>
     <p class="card-text">Owner: <%= woodwind.user[:first_name]%> <%= woodwind.user[:last_name] %></p>
@@ -111,8 +120,9 @@
 <% end %>
 </div>
 
-<h2 id="percussion">Percussion</h2>
-<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<h2 id="percussion" style="font-family: 'Great Vibes";>Percussion</h2>
+
+<div class="instrument-container my-box-light flex-wrap mb-2">
 <% @percussions.each do |percussion| %>
 <div class ="box" >
 <div class="" style="width: 18rem;">
@@ -123,6 +133,7 @@
     <h5 class="card-title"><%= link_to percussion[:brand], instrument_path(percussion), class: "instrument-title" %></h5>
     <p class="card-text"><%= percussion[:category] %></p>
     <p class="card-text"><%= percussion[:renting_price] %> JPY/day</p>
+     <p class="card-text"><i class="fas fa-map-marker-alt"></i> <%=  percussion[:location] %></p>
     <i class="far fa-heart like-btn"></i>
     <p class ="border mt-3 mb-2"></p>
     <p class="card-text">Owner: <%= percussion.user[:first_name]%> <%= percussion.user[:last_name] %></p>
@@ -132,8 +143,8 @@
 <% end %>
 </div>
 
-<h2 id="guitar">Guitar and Bass</h2>
-<div class="instrument-container d-flex justify-content-around my-box-light flex-wrap mb-2">
+<h2 id="guitar" style="font-family: 'Great Vibes";>Guitar and Bass</h2>
+<div class="instrument-container my-box-light flex-wrap mb-2">
 <% @guitars.each do |guitar| %>
 <div class ="box" >
 <div class="" style="width: 18rem;">
@@ -144,6 +155,7 @@
     <h5 class="card-title"><%= link_to guitar[:brand], instrument_path(guitar), class: "instrument-title" %></h5>
     <p class="card-text"><%= guitar[:category] %></p>
     <p class="card-text"><%= guitar[:renting_price] %> JPY/day</p>
+    <p class="card-text"><i class="fas fa-map-marker-alt"></i> <%=  guitar[:location] %></p>
     <i class="far fa-heart like-btn"></i>
     <p class ="border mt-3 mb-2"></p>
     <p class="card-text">Owner: <%= guitar.user[:first_name]%> <%= guitar.user[:last_name] %></p>
@@ -151,6 +163,13 @@
 </div>
 </div>
 <% end %>
+</div>
+</div>
+
+<div id="map" class= "col-6"
+     style="width: 600px; height: 100vh; position: sticky;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
 
 
