@@ -42,11 +42,15 @@
       </tbody></table>
       <% unless @instrument.bookings.empty? %>
         <hr>
-        <p>Not available</p>
-        <% @instrument.bookings.each do |booking| %>
-          <p>From <%= booking[:start_date] %> to <%= booking[:end_date] %></p>
+        <% bookings = '' %>
+        <% @instrument.bookings.each_with_index do |booking, i| %>
+          <% bookings += "#{booking[:start_date]}|#{booking[:end_date]}" %>
+          <% bookings += ',' unless i == @instrument.bookings.size - 1 %>
         <% end %>
-        <div data-controller="calendar" data-calendar-target="calender"></div>
+        <h4>Availablility</h4>
+        <div data-controller="calendar"
+             data-calendar-target="calendar"
+             data-bookings=<%= bookings %>></div>
       <% end %>
     </div>
     <div class="instrument-infos">

@@ -30,7 +30,8 @@
 .jscal-col {
     border-collapse: collapse;
     border: 1px solid #DDD;
-    vertical-align: top;
+    vertical-align: middle;
+    pointer-events: none;
 }
 
 .cal-week-day-col {
