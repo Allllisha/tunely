@@ -14,8 +14,21 @@
   padding-left: 50px;
 }
 
-.footer {
-  position: sticky;
-  bottom: 0;
+.min-height-90vh {
+  min-height: 90vh;
 }
 
+.fit-cover {
+  object-fit: cover;
+}
+
+.font-fam {
+  color: black;
+  font-family: 'Circular Std Medium';
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.background-color {
+  background-color: #d1d1d4;
+}
