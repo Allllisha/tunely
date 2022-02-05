@@ -8,10 +8,13 @@ export default class extends Controller {
     const JSCalendar = LibName.JSCalendar;
     const JSCalendarEvent = LibName.JSCalendarEvent;
     const calendar = new JSCalendar(this.calenderTarget, {
-      views: ["month"]
+      views: ["month"],
+      daysVocab: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      width: 400,
+      height: 300
     })
       .init()
       .render();
-
+    document.querySelector(".control-bar-views").remove();
   }
 }
