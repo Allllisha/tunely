@@ -1,7 +1,6 @@
-
-<div class="login">
-  <div class="bg">
- <div class="glass-1">
+<div class ="background-home">
+<div class="center-container">
+<div class="form-container">
   <%= simple_form_for @instrument do |f| %>
     <%= f.input :category, collection: Instrument.categories.keys, class: "input" %>
     <%= f.input :brand, class: "input" %>
@@ -11,6 +10,9 @@
     <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "input" %>
     <%= f.button :submit, class: "input", class: "btn-outline-secondary" %>
   <% end %>
- </div>
+  </div>
+</div>  
 </div>
-</div>
+
+
+

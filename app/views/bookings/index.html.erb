@@ -1,50 +1,43 @@
 <% if user_signed_in? %>
-  <div class="d-flex justify-content-center">
-  <h2> <%= current_user.first_name %> 's Bookings</h2>
+  <div class="d-flex justify-content-center mt-3">
+  <h2 class="display-2"> <%= current_user.first_name %> 's Bookings</h2>
   </div>
-    <div class="row py-3">
-      <div class="col-3">
-        <li class="nav-item" role="presentation">
-          <a class="<%= 'active' if params[:tab] == "bookings" || params[:tab].nil? %> tab-underlined" id="home-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="home" aria-selected="true">Instrument</a>
-        </li>
+  <div class="container min-height-90vh mt-3">
+    <div class="row py-2 background-color">
+      <div class="col-3 font-fam">
+        <th class="border-0">Instrument</th>
       </div>
-      <div class="col-3">
-        <li class="nav-item" role="presentation">
-          <a class="<%= 'active' if params[:tab] == "requests" %> tab-underlined" id="profile-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="profile" aria-selected="false">Details</a>
-        </li>
+      <div class="col-3 font-fam">
+        <th class="border-0">Details</th>
       </div>
-      <div class="col-3">
-        <li class="nav-item" role="presentation">
-          <a class="<%= 'active' if params[:tab] == "converstions" %> tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">Status</a>
-        </li>
+      <div class="col-3 font-fam">
+        <th class="border-0">Status</th>
       </div>
-      <div class="col-3">
-        <li class="nav-item" role="presentation">
-          <a class="<%= 'active' if params[:tab] == "converstions" %> tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">Action</a>
-        </li>
+      <div class="col-3 font-fam">
+        <th class="border-0">Action</th>
       </div>
     </div>
-        <% @bookings.each do |booking| %>
+      <% @bookings.each do |booking| %>
           <div class="row py-3">
             <div class="col-3">
               <% if booking.instrument.photos.attached? %>
-                <%= cl_image_tag booking.instrument.photos.first.key, width: 80, height: 150, class: 'fit-cover rounded' %>
+                <%= cl_image_tag booking.instrument.photos.first.key, width: 200, height: 200, class: 'fit-cover rounded' %>
                 <% else %>
                   <%= image_tag "musician1.png", height: 100 %>
               <% end %>
             </div>
             <div class="col-3">
-              <li><%= booking.instrument.brand %></li>
-              <li><%= booking.instrument.condition %></li>
-              <li><%= booking.instrument.renting_price %> JPY/day </li>
+              <p><b>Brand:</b> <%= booking.instrument.brand %></p>
+              <p><b>Condition:</b><%= booking.instrument.condition %></p>
+              <p><b>Payment amount:</b> <%= booking.instrument.renting_price %> JPY/day </p>
             </div>
             <div class="col-3">
               <% if booking.pending? %>
-                <i class="fas fa-spinner mt-2 mx-2" data-toggle="tooltip" data-placement="top" title="Pending" style="font-size:25px"></i>
+                <i class="fas fa-spinner mt-2 mx-2" data-toggle="tooltip" data-placement="top" title="Pending"> Pending</i>
               <% elsif booking.accepted? %>
-                <i class="fas fa-calendar-check mt-2 mx-2"></i>
+                <i class="fas fa-calendar-check mt-2 mx-2"> Accepted</i>
               <% else %>
-                <i class="far fa-times-circle mt-2 mx-2" style="font-size: 25px"></i>
+                <i class="far fa-times-circle mt-2 mx-2"> Rejected</i>
               <% end %>
             </div>
             <div class="col-3">
@@ -53,9 +46,12 @@
              <% end %>
             </div>
           </div>
-        <% end %>
-      </div>
+      <% end %>
+        </div>
     </div>
+  </div>
+
+
   <% else %>
     <h1>Book to Tune in</h1>
   <%end %>

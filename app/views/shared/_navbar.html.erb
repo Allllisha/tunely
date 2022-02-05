@@ -16,13 +16,14 @@
         
         <div class="menu">
           <ul>
-          <li><a href="instruments#update">New instruments</a></li>
+          <li><%= link_to "New instruments", instruments_path %></li>
             <li><a href="instruments#piano">Piano & keyboard</a></li>
             <li><a href="instruments#strings">Strings</a></li>
             <li><a href="instruments#brass">Brass</a></li>
             <li><a href="instruments#woodwind">Woodwind</a></li>
              <li><a href="instruments#percussion">Percussion</a></li>
              <li><a href="instruments#guitar">Guiter and Bass</a></li>
+             <li><%= link_to "Are you an owner?", owner_bookings_path %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></li>
           </ul>
         </div>

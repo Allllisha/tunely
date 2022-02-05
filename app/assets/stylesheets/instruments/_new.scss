@@ -1,63 +1,98 @@
-.form-container{
-  margin:50px;
-  color: #000;
+.background-home{
+  position: relative;
+  background-image: asset_url('210.jpg');
+//  background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #fa9b48 100%);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
 }
 
-.bg {
-  padding-top: 30px;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 500px;
-  padding: 60px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  h2{
-    position: absolute;
+.background-home::before{
+  content: '';
+}
+
+.form-container{
+  margin: 80px;
+  padding: 30px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.19);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  input{
+    color: black;
+  }
+  color: black;
+  a{
+    color: black;
+  }
+
+  .btn{
+    color: black;
+   background-color: transparent;
+   border: black solid 0.2px;
+   margin-bottom: 5px;
   }
 }
 
 
-.glass-1 {
-  width: 100%;
-  height: 600px;
-  max-width: 700px;
-  padding: 30px;
-  background-color: rgba(255, 255, 255, 0.029); 
-  border: 1px solid rgba(255, 255, 255, 0.4); 
-  border-right-color: rgba(255, 255, 255, 0.043);
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  -webkit-backdrop-filter: blur(20px); 
-  backdrop-filter: blur(20px);
-  box-shadow: 0 5px 20px rgba(255, 152, 79, 0.5); 
- position: relative;
- @media screen and (min-width: 640px) {
-  width: 100%;
-  height: 600px;
-  max-width: 700px;
-  padding: 50px;
-  background-color: rgba(255, 255, 255, 0.029); 
-  border: 1px solid rgba(255, 255, 255, 0.4); 
-  border-right-color: rgba(255, 255, 255, 0.043);
-  border-bottom-color: rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  -webkit-backdrop-filter: blur(20px); 
-  backdrop-filter: blur(20px);
-  box-shadow: 0 5px 20px rgba(255, 152, 79, 0.5); 
- position: relative;
-}
-}
+.form-login-container{
+  margin: 110px;
+  margin-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 100px;
+  padding-right: 100px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.19);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  color: black;
+  h2{
+    margin-bottom: 5px;
+  }
+  a{
+    color: black;
+  }
 
-
-.glass h1 {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.228);
-  font-family: "Heebo", sans-serif;
-  font-size: 50px;
-  font-weight: bold;
-  letter-spacing: 0.06em;
+  .btn{
+    color: black;
+   background-color: transparent;
+   border: black solid 0.2px;
+   margin-bottom: 5px;
+  }
+  @media screen and (max-width: 767px) {
+    margin: 80px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.19);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+  }
 }
 
+.form-control{
+  background-color: transparent;
+}
+
+.form-select{
+  background-color: transparent;
+  border: white;
+}
+
+.center-container{
+  display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.file{
+  background-color: transparent;
+  border: white;
+}
+
+.btn-outline-secondary:hover{
+  background-color: transparent;
+}
