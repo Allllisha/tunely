@@ -1,18 +1,44 @@
 <% if user_signed_in? %>
   <div class="d-flex justify-content-center">
-  <h2> <%= current_user.first_name %> 's bookings</h2>
+  <h2> <%= current_user.first_name %> 's Bookings</h2>
   </div>
-    <div class="container">
-      <div class="justify-content-center">
+    <div class="row py-3">
+      <div class="col-3">
+        <li class="nav-item" role="presentation">
+          <a class="<%= 'active' if params[:tab] == "bookings" || params[:tab].nil? %> tab-underlined" id="home-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="home" aria-selected="true">Instrument</a>
+        </li>
+      </div>
+      <div class="col-3">
+        <li class="nav-item" role="presentation">
+          <a class="<%= 'active' if params[:tab] == "requests" %> tab-underlined" id="profile-tab" data-toggle="tab" href="#requests" role="tab" aria-controls="profile" aria-selected="false">Details</a>
+        </li>
+      </div>
+      <div class="col-3">
+        <li class="nav-item" role="presentation">
+          <a class="<%= 'active' if params[:tab] == "converstions" %> tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">Status</a>
+        </li>
+      </div>
+      <div class="col-3">
+        <li class="nav-item" role="presentation">
+          <a class="<%= 'active' if params[:tab] == "converstions" %> tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">Action</a>
+        </li>
+      </div>
+    </div>
         <% @bookings.each do |booking| %>
-          <div class="row">
-            <div class="col-4">
-              <a class="<%= 'active' if params[:tab] == "conversations" %> tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">My Instrument</a>
+          <div class="row py-3">
+            <div class="col-3">
+              <% if booking.instrument.photos.attached? %>
+                <%= cl_image_tag booking.instrument.photos.first.key, width: 80, height: 150, class: 'fit-cover rounded' %>
+                <% else %>
+                  <%= image_tag "musician1.png", height: 100 %>
+              <% end %>
             </div>
-            <div class="col-4">
-              <a class="<%= 'active' if params[:tab] == "bookings" || params[:tab].nil? %> tab-underlined" id="home-tab" data-toggle="tab" href="#bookings" role="tab" aria-controls="home" aria-selected="true">Details</a>
+            <div class="col-3">
+              <li><%= booking.instrument.brand %></li>
+              <li><%= booking.instrument.condition %></li>
+              <li><%= booking.instrument.renting_price %> JPY/day </li>
             </div>
-            <div class="col-4">
+            <div class="col-3">
               <% if booking.pending? %>
                 <i class="fas fa-spinner mt-2 mx-2" data-toggle="tooltip" data-placement="top" title="Pending" style="font-size:25px"></i>
               <% elsif booking.accepted? %>
@@ -20,6 +46,11 @@
               <% else %>
                 <i class="far fa-times-circle mt-2 mx-2" style="font-size: 25px"></i>
               <% end %>
+            </div>
+            <div class="col-3">
+             <%= link_to booking_path(booking), { method: :delete, data: { confirm: "Are you sure" } } do %>
+              <i class="fas fa-trash-alt"></i>
+             <% end %>
             </div>
           </div>
         <% end %>
