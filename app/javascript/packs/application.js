@@ -25,12 +25,15 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here
   initMapbox();
   initAutocomplete();
-  new Glide('.glide', {
-    type: "carousel",
-    perView: 1,
-    autoplay: 3000
-  }).mount();
+
+  // init glide
+  var sliders = document.querySelectorAll('.glide');
+  for (var i = 0; i < sliders.length; i++) {
+    var glide = new Glide(sliders[i], {
+      type: "carousel",
+      perView: 1,
+      autoplay: 3000
+    });
+    glide.mount()
+  }
 });
-
-
-
