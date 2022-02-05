@@ -10,11 +10,12 @@ export default class extends Controller {
     const calendar = new JSCalendar(this.calenderTarget, {
       views: ["month"],
       daysVocab: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
-      width: 400,
-      height: 300
+      width: 300,
+      height: 200
     })
       .init()
       .render();
     document.querySelector(".control-bar-views").remove();
+    document.querySelector(".calendar-action-today").remove();
   }
 }
