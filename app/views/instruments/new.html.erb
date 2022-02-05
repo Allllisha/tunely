@@ -1,11 +1,16 @@
+
 <div class="login">
+  <div class="bg">
+ <div class="glass-1">
   <%= simple_form_for @instrument do |f| %>
-    <%= f.input :category, collection: Instrument.categories.keys %>
-    <%= f.input :brand %>
-    <%= f.input :location %>
-    <%= f.input :condition, collection: Instrument.conditions.keys %>
-    <%= f.input :renting_price %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit %>
+    <%= f.input :category, collection: Instrument.categories.keys, class: "input" %>
+    <%= f.input :brand, class: "input" %>
+    <%= f.input :location, class: "input" %>
+    <%= f.input :condition, collection: Instrument.conditions.keys, class: "input" %>
+    <%= f.input :renting_price, class: "input" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, class: "input" %>
+    <%= f.button :submit, class: "input", class: "btn-outline-secondary" %>
   <% end %>
+ </div>
+</div>
 </div>
