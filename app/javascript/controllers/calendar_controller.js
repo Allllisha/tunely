@@ -8,7 +8,7 @@ export default class extends Controller {
     const JSCalendar = LibName.JSCalendar;
     const JSCalendarEvent = LibName.JSCalendarEvent;
     const calendar = new JSCalendar(this.calenderTarget, {
-      /* options */
+      views: ["month"]
     })
       .init()
       .render();
