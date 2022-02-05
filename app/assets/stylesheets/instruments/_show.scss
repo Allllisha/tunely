@@ -35,4 +35,10 @@
 }
 .date {
   margin: 0 !important;
+  width: 8.8rem;
+}
+
+.booking-date-input {
+  display: flex;
+  justify-content: space-between;
 }
