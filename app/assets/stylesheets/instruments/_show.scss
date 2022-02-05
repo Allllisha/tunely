@@ -13,6 +13,7 @@
 
 .instrument-details-flexbox {
   display: flex;
+  margin-bottom: 2rem;
 }
 
 .instrument-infos {
@@ -31,4 +32,7 @@
 
 .info-header {
   width: 8rem;
+}
+.date {
+  margin: 0 !important;
 }

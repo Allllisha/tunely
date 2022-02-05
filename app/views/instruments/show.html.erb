@@ -52,9 +52,16 @@
     <div class="instrument-infos">
       <h4>Make a booking</h4>
       <%= simple_form_for [@instrument, @booking] do |f| %>
-        <%= f.input :start_date, as: :date, html5: true %>
-        <%= f.input :end_date, as: :date, html5: true %>
-        <%= f.submit 'Book', class: 'btn btn-primary' %>
+        <div class="form-row">
+          <div class="col">
+            <%= f.input :start_date, as: :date, html5: true, label: false %>
+          </div>
+          <span>to</span>
+          <div class="col">
+            <%= f.input :end_date, as: :date, html5: true, label: false %>
+          </div>
+        </div>
+        <%= f.submit 'Book', class: 'btn btn-primary btn-block mt-2' %>
       <% end %>
     </div>
   </div>
