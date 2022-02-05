@@ -17,8 +17,17 @@ export default class extends Controller {
       .render();
     document.querySelector(".control-bar-views").remove();
     document.querySelector(".calendar-action-today").remove();
+    /*
     this.calendarTarget.dataset.bookings.split(',').forEach(startAndEnd => {
-      startAndEnd.split('|');
+      let startDay = Date.parse(startAndEnd.split('|'))[0];
+      console.log(startDay);
+      const days = (Date.parse(startAndEnd.split('|')[1]) - startDay) / 86400000; // total number of days in between
+      console.log(days);
+      Array(days).forEach(() => {
+        console.log(startDay);
+        startDay += 86400000;
+      });
     });
+    */
   }
 }
