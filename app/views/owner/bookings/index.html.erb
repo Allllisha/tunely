@@ -1,26 +1,39 @@
+<br>
 <% if user_signed_in? %>
   <div class="d-flex justify-content-center">
   <h2> <%= current_user.first_name %> 's instruments for rent</h2>
   </div>
+  <br>
     <div class="container">
-      <div class="justify-content-center">
-        <% @instruments_with_bookings.each do |instrument| %>
-          <p><%= instrument.category %></p>
-        <% end %>
-      </div>
+      <h3> My booked items </h3>
+        <div class="justify-content-center">
+          <% @instruments_with_bookings.each do |instrument| %>
+            <div class="row">
+              <div class="col-4">
+                <p>ref no.<%= instrument.id %>: <%= instrument.category %> (<%= instrument.brand %>)</p>
+              </div>
+            </div>
+          <% end %>
+        </div>
     </div>
+    <br>
     <div class="container">
-      <div class="justify-content-center">
-        <% @instruments_without_bookings.each do |instrument| %>
-          <p><%= instrument.category %></p>
-        <% end %>
-      </div>
+      <h3> My available items</h3>
+        <div class="justify-content-center">
+          <% @instruments_without_bookings.each do |instrument| %>
+            <div class="row">
+              <div class="col-4">
+                <p>ref no.<%= instrument.id %>: <%= instrument.category %> (<%= instrument.brand %>)</p>
+              </div>
+            </div>
+          <% end %>
+        </div>
     </div>
 
 <% else %>
   <h1>Sign in to see your bookings</h1>
-<%end %>
-
+<% end %>
+<br>
 <footer class="footer">
     <div class="row">
       <div class="col-6">
