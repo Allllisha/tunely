@@ -17,14 +17,14 @@ import "controllers"
 import "bootstrap"
 import Glide from '@glidejs/glide'
 import { initMapbox } from './map';
-import { initAutocomplete } from './init_autocomplete';
+// import { initAutocomplete } from './init_autocomplete';
 
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here
   initMapbox();
-  initAutocomplete();
+  // initAutocomplete();
 
   // init glide
   var sliders = document.querySelectorAll('.glide');
