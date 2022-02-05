@@ -18,6 +18,11 @@
           <a class="<%= 'active' if params[:tab] == "converstions" %> tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">Status</a>
         </li>
       </div>
+      <div class="col-3">
+        <li class="nav-item" role="presentation">
+          <a class="<%= 'active' if params[:tab] == "converstions" %> tab-underlined" id="converstion-tab" data-toggle="tab" href="#converstions" role="tab" aria-controls="converstion" aria-selected="false">Action</a>
+        </li>
+      </div>
     </div>
         <% @bookings.each do |booking| %>
           <div class="row py-3">
