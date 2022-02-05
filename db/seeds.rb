@@ -91,8 +91,6 @@ flute.save!
 flute.photos.attach(io: URI.open("https://images.unsplash.com/photo-1562808191-76e71b08a870?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Zmx1dGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"), filename: "flute1.jpeg")
 flute.photos.attach(io: URI.open("https://images.unsplash.com/photo-1562808191-76e71b08a870?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Zmx1dGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"), filename: "flute2.jpeg")
 
-
-
 keybord = Instrument.new(
   category: 'keybord',
   brand: Faker::Company.name,
@@ -106,11 +104,6 @@ keybord.save!
 keybord.photos.attach(io: URI.open("https://images.unsplash.com/photo-1598653222000-6b7b7a552625?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8a2V5Ym9hcmQlMjBpbnN0cnVtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"), filename: "keybord1.jpeg")
 keybord.photos.attach(io: URI.open("https://images.unsplash.com/photo-1578410170179-bb10594ed395?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8a2V5Ym9hcmQlMjBpbnN0cnVtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"), filename: "keybord2.jpeg")
 
-clarinet.user = User.all.sample
-clarinet.save!
-clarinet.photos.attach(io: URI.open("https://images.unsplash.com/photo-1600771488491-c22d42a9347d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2xhcmluZXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"), filename: "clarinet.jpeg")
-clarinet.photos.attach(io: URI.open("https://images.unsplash.com/photo-1569791832138-fbdd9a500384?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"), filename: "clarinet2.jpeg")
-
 clarinet = Instrument.new(
   category: 'clarinet',
   brand: Faker::Company.name,
@@ -119,11 +112,10 @@ clarinet = Instrument.new(
   condition: 'verygood'
 )
 
-
-trumpet.user = User.all.sample
-trumpet.save!
-trumpet.photos.attach(io: URI.open("https://images.unsplash.com/photo-1573871666457-7c7329118cf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJ1bXBldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"), filename: "trumpet.jpeg")
-trumpet.photos.attach(io: URI.open("https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dHJ1bXBldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"), filename: "trumpetjpeg")
+clarinet.user = User.all.sample
+clarinet.save!
+clarinet.photos.attach(io: URI.open("https://images.unsplash.com/photo-1600771488491-c22d42a9347d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2xhcmluZXR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"), filename: "clarinet.jpeg")
+clarinet.photos.attach(io: URI.open("https://images.unsplash.com/photo-1569791832138-fbdd9a500384?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"), filename: "clarinet2.jpeg")
 
 trumpet = Instrument.new(
   category: 'trumpet',
@@ -133,11 +125,10 @@ trumpet = Instrument.new(
   condition: 'verygood'
 )
 
-
-frenchhorn.user = User.all.sample
-frenchhorn.save!
-frenchhorn.photos.attach(io: URI.open("https://images.unsplash.com/photo-1573871666457-7c7329118cf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJ1bXBldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"), filename: "trumpet.jpeg")
-frenchhorn.photos.attach(io: URI.open("https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dHJ1bXBldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"), filename: "trumpetjpeg")
+trumpet.user = User.all.sample
+trumpet.save!
+trumpet.photos.attach(io: URI.open("https://images.unsplash.com/photo-1573871666457-7c7329118cf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJ1bXBldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"), filename: "trumpet.jpeg")
+trumpet.photos.attach(io: URI.open("https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dHJ1bXBldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"), filename: "trumpetjpeg")
 
 frenchhorn = Instrument.new(
   category: 'frenchhorn',
@@ -147,8 +138,10 @@ frenchhorn = Instrument.new(
   condition: 'verygood'
 )
 
-
-
+frenchhorn.user = User.all.sample
+frenchhorn.save!
+frenchhorn.photos.attach(io: URI.open("https://images.unsplash.com/photo-1573871666457-7c7329118cf9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dHJ1bXBldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"), filename: "trumpet.jpeg")
+frenchhorn.photos.attach(io: URI.open("https://images.unsplash.com/photo-1511192336575-5a79af67a629?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dHJ1bXBldHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"), filename: "trumpetjpeg")
 
 8.times do
   instrument = Instrument.new(
