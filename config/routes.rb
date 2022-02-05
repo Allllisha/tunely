@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :instruments, only: %i[index new create show] do
     resources :bookings, only: %i[create]
   end
-  resources :bookings, only: %i[index update]
+  resources :bookings, only: %i[index update destroy]
 
   namespace :owner do
     resources :bookings, only: :index
