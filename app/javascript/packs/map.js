@@ -25,7 +25,8 @@ const initMapbox = () => {
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
   map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-    mapboxgl: mapboxgl}))
+    mapboxgl: mapboxgl}),'bottom-left')
+    // map.addControl(new mapboxgl.AttributionControl(), 'bottom-left');
   }
 };
 

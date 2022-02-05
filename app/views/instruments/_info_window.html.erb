@@ -1,3 +1,5 @@
+<% unless instrument.photos.empty? %>
 <%= cl_image_tag instrument.photos.first.key, :width => '300px', :height => '150px', class: "card-img-top"%>
-<h5><%= instrument.brand %></h5>
+<% end %>
+<h5><%= link_to instrument.brand, instrument_path(instrument), class: "instrument-title" %></h5>
 <p><%= instrument.location %></p>
