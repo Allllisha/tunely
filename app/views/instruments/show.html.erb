@@ -46,6 +46,7 @@
         <% @instrument.bookings.each do |booking| %>
           <p>From <%= booking[:start_date] %> to <%= booking[:end_date] %></p>
         <% end %>
+        <div class="vanilla-calendar" data-controller="calendar" data-calendar-target="calender"></div>
       <% end %>
     </div>
     <div class="instrument-infos">
